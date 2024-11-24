@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Basanta Thapa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <div class="navbar">
+        <!-- Left menu icon -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        
+        <!-- Center Title -->
+        <h1 class="nav-title">Basanta Thapa</h1>
+        
+        <!-- Right Search Icon -->
+        <div class="search">
+            <span class="search-icon" onclick="showSearchPopup()">&#128269;</span>
+        </div>
+    </div>
+    
+    <!-- Search Pop-up -->
+    <div id="search-popup" class="search-popup">
+    <div class="search-container">
+    <input type="text" id="search-input" placeholder="Type and hit enter ..." />
+    <button onclick="performSearch()">SEARCH</button>
+    </div>
+    </div>
+    
+    <!-- Hidden Menu Content -->
+    <div id="menu-content">
+        <ul>
+            <li><a href="index.html" class="menu-item">Home</a></li><hr>
+            <li><a href="#contact-me" class="menu-item">Contact Me</a></li><hr>
+            <li><a href="#december-goals" class="menu-item">December Goals</a></li><hr>
+            <li><a href="task.html" class="menu-item">Daily Tasks</a></li><hr>
+        </ul>
+    </div>
+    
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+    <div class="container">
+    <h2>✨ About Me ✨</h2>
+    <strong><p>Hello! I'm <span class="highlight">Basanta Thapa</span>, a dreamer from a middle-class family 🌟. Life hasn't been easy, but every challenge has taught me resilience and the power of self-growth 💪. As the only child in my family, I’ve taken it upon myself to break the cycle of poverty and build a better future 🌈.</p>
+    <p>Turning 18 was a wake-up call 🔔. I realized that my habits—procrastination and being stuck on my phone 📱—were holding me back. So, I’m taking a <span class="highlight">30-day challenge</span> this December 🎯 to transform myself and get ready for an amazing 2025 🎉. This journey is about eliminating bad habits, learning new skills, and building a mindset for success 📚✨.</p>
+    <p>Follow me as I document this challenge, share my progress, and inspire others to chase their dreams too 🚀. Together, let’s see how far we can go!</p></strong>
+    </div>
+    <h2><center>Connect with Me</center></h2>
+    <div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61566105410203&mibextid=kFxxJD" target="_blank" title="Facebook">
+    <img src="images/Facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://instagram.com/ba.santa_saru" target="_blank" title="Instagram">
+    <img src="images/Instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://youtube.com/@Basanta2898" target="_blank" title="YouTube">
+    <img src="images/youtube.png" alt="YouTube" />
+    </a>
+    <a href="https://tiktok.com/@ba.santa_saru" target="_blank" title="TikTok">
+    <img src="images/tiktok.png" alt="TikTok" />
+    </a>
+    <a href="https://wa.me/9779806532910" target="_blank" title="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp" />
+    </a>
+    </div>
+    <footer>
+        © 2024 Basanta Thapa | Let’s grow together! 🌟
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById('menu-content');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to show the search popup
+        function showSearchPopup() {
+        const searchPopup = document.getElementById('search-popup');
+        searchPopup.style.display = 'flex';
+        }
+        
+        // Function to close the search popup
+        function hideSearchPopup() {
+        const searchPopup = document.getElementById('search-popup');
+        searchPopup.style.display = 'none';
+        }
+
+        // Function to perform the search
+        function performSearch() {
+            const searchInput = document.getElementById('search-input').value;
+
+            // Redirect if the user enters a query
+            if (searchInput.trim()) {
+                const searchLink = `https://www.google.com/search?q=${encodeURIComponent(searchInput)}`;
+                window.location.href = searchLink;
+            } else {
+                alert('Please enter a search query.');
+            }
+        }
+        // Close search popup when clicking outside of it
+        document.addEventListener('click', (event) => {
+        const searchPopup = document.getElementById('search-popup');
+        const searchIcon = document.querySelector('.search-icon');
+        
+        if (
+        searchPopup.style.display === 'flex' &&
+        !searchPopup.contains(event.target) &&
+        !searchIcon.contains(event.target)
+        ) {
+        searchPopup.style.display = 'none';
+        }
+        });
+        
+        // Close menu when clicking outside of it
+        document.addEventListener('click', (event) => {
+        const menu = document.getElementById('menu-content');
+        const menuIcon = document.querySelector('.menu-icon');
+        
+        if (
+        menu.style.display === 'block' &&
+        !menu.contains(event.target) &&
+        !menuIcon.contains(event.target)
+        ) {
+        menu.style.display = 'none';
+        document.body.classList.remove('menu-open');
+        }
+        });
+    </script>
+</body>
+</html>
