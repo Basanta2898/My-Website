@@ -18,6 +18,12 @@ body {
     background-color: black;
     color: white;
     padding: 10px 20px;
+    position: fixed; /* Fixed navbar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full-width navbar */
+    z-index: 1000; /* Stays above other content */
+    line-height: 1; /* Avoid inherited body line-height */
     
     }
     .nav-title {
