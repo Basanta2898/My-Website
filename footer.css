@@ -1,0 +1,65 @@
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            
+            
+        }
+        h2 {
+            color:Red;
+            text-align: center;
+           font:bold;
+        }
+        footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #007BFF;
+        color: #fff;
+        }
+        .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        }
+        .social-icons a {
+        text-decoration: none;
+        color: #007BFF;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #007BFF;
+        border-radius: 50%;
+        transition: background 0.3s, color 0.3s;
+        }
+        .social-icons a:hover {
+        background: #007BFF;
+        color: white;
+        }
+        .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        }
+        
+        .social-icons a img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #007BFF;
+        padding: 5px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .social-icons a img:hover {
+        transform: scale(1.2);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-color: #0056b3;
+        }
+

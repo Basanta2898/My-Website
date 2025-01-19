@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to the New Page</h1>
+        <p>This is the main content of your page.</p>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript to Load Navbar and Footer -->
+    <script>
+        // Function to load HTML content into an element
+        function loadHTML(id, url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Could not fetch ${url}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Load navbar and footer
+        loadHTML('navbar', 'navbar.html');
+        loadHTML('footer', 'footer.html');
+    </script>
+</body>
+</html>
